@@ -1,30 +1,46 @@
-<!DOCTYPE html>
+# index.html
+cat <<'EOF' > index.html
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Attendance Marking</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Factory Pattern Demo</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h2>Mark Attendance</h2>
-  <form>
-    <label>Date:</label>
-    <input type="date"><br><br>
+  <main class="container">
+    <h1>Factory Design Pattern — Demo</h1>
 
-    <label>Student:</label>
-    <select>
-      <option>Student 1</option>
-      <option>Student 2</option>
-      <option>Student 3</option>
-    </select><br><br>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="examples.html">Examples</a> |
+      <a href="factory-explained.html">Explain</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
 
-    <label>Status:</label>
-    <select>
-      <option>Present</option>
-      <option>Absent</option>
-      <option>Late</option>
-    </select><br><br>
+    <section class="controls">
+      <label for="type">Choose product type:</label>
+      <select id="type">
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="bird">Bird</option>
+      </select>
+      <button id="createBtn">Create</button>
+    </section>
 
-    <button type="submit">Save Attendance</button>
-  </form>
+    <section id="output" class="output">
+      <h2>Output</h2>
+      <div id="cards" class="cards"></div>
+    </section>
+
+    <section class="explain">
+      <h2>What this shows</h2>
+      <p>This page uses a JavaScript <strong>Factory</strong> to create animals (Dog, Cat, Bird).</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
